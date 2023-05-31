@@ -6,7 +6,6 @@ from app.models import Project, Staff, Field
 from api.serializers import ProjectSerializer
 from api.serializers import StaffSerializer
 from api.serializers import FieldSerializer
-from .permissions import IsOwnerOrReadOnly
 
 class ListPagination(PageNumberPagination):
 
@@ -20,7 +19,7 @@ class ProjectViewset(viewsets.ModelViewSet):
     serializer_class = ProjectSerializer
     pagination_class = ListPagination
 
-class StaffViewset(viewsets.ModelViewSet):
+class StaffAPIView(generics.ListCreateAPIView):
 
     queryset = Staff.objects.all()
     serializer_class = StaffSerializer
