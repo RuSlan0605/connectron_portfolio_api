@@ -45,10 +45,7 @@ INSTALLED_APPS = [
     # 3rd
     'ckeditor',
     'rest_framework',
-    'rest_framework.authtoken',
     'corsheaders',
-    'dj_rest_auth',
-    'dj_rest_auth.registration',
 ]
 
 REST_FRAMEWORK = {
