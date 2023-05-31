@@ -19,19 +19,16 @@ class ProjectViewset(viewsets.ModelViewSet):
     queryset = Project.objects.all()
     serializer_class = ProjectSerializer
     pagination_class = ListPagination
-    permission_classes = (IsOwnerOrReadOnly, )
 
 class StaffViewset(viewsets.ModelViewSet):
 
     queryset = Staff.objects.all()
     serializer_class = StaffSerializer
     pagination_class = ListPagination
-    permission_classes = (IsOwnerOrReadOnly, )
 
 class FieldAPIView(generics.ListCreateAPIView):
 
     queryset = Field.objects.all()
     serializer_class = FieldSerializer
     pagination_class = ListPagination
-    permission_classes = (IsOwnerOrReadOnly, )
 
