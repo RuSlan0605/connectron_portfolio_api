@@ -19,13 +19,25 @@ class ProjectViewset(viewsets.ModelViewSet):
     serializer_class = ProjectSerializer
     pagination_class = ListPagination
 
-class StaffAPIView(generics.ListCreateAPIView):
+class StaffListAPIView(generics.ListCreateAPIView):
 
     queryset = Staff.objects.all()
     serializer_class = StaffSerializer
     pagination_class = ListPagination
 
-class FieldAPIView(generics.ListCreateAPIView):
+class StaffAPIView(generics.RetrieveUpdateDestroyAPIView):
+
+    queryset = Staff.objects.all()
+    serializer_class = StaffSerializer
+    pagination_class = ListPagination
+
+class FieldListAPIView(generics.ListCreateAPIView):
+
+    queryset = Field.objects.all()
+    serializer_class = FieldSerializer
+    pagination_class = ListPagination
+
+class FieldAPIView(generics.RetrieveUpdateDestroyAPIView):
 
     queryset = Field.objects.all()
     serializer_class = FieldSerializer
